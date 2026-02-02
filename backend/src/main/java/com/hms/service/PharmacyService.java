@@ -3,6 +3,7 @@ package com.hms.service;
 import com.hms.model.PharmacyStock;
 import com.hms.repository.PharmacyStockRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -19,6 +20,9 @@ public class PharmacyService {
 
     @Autowired
     private JavaMailSender mailSender;
+
+    @Value("${hms.notification.email}")
+    private String notificationEmail;
 
     public PharmacyStock createStock(PharmacyStock stock) {
         return pharmacyStockRepository.save(stock);
@@ -70,11 +74,7 @@ public class PharmacyService {
                         item.getMedicineName(), item.getQuantity(), item.getReorderLevel()));
             }
 
-            String recipientEmail = System.getenv("NOTIFICATION_EMAIL");
-            if (recipientEmail == null || recipientEmail.isEmpty()) {
-                recipientEmail = "admin@hospital.com";
-            }
-            sendEmail(recipientEmail, "Pharmacy Low Stock Alert", message.toString());
+            sendEmail(notificationEmail, "Pharmacy Low Stock Alert", message.toString());
         }
     }
 

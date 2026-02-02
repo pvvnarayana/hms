@@ -81,7 +81,7 @@ const Patients = () => {
   };
 
   const filteredPatients = patients.filter(patient =>
-    patient.fullName.toLowerCase().includes(searchTerm.toLowerCase())
+    patient.fullName?.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
