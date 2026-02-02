@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: hospital-management-system
+  
+  datasource:
+    url: jdbc:postgresql://localhost:5432/hms_db
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgres}
+    driver-class-name: org.postgresql.Driver
+  
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+  
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${MAIL_USERNAME:}
+    password: ${MAIL_PASSWORD:}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+jwt:
+  secret: ${JWT_SECRET:}
+  expiration: 86400000
+
+hms:
+  notification:
+    email: ${NOTIFICATION_EMAIL:admin@hospital.com}
+
+server:
+  port: 8080
+  servlet:
+    context-path: /api
