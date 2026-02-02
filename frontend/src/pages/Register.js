@@ -85,6 +85,8 @@ const Register = () => {
               onChange={(e) => setFormData({ ...formData, role: e.target.value })}
             >
               <option value="PATIENT">Patient</option>
+              {/* Note: For security, privileged roles should be assigned by administrators.
+                  In production, remove or restrict these options. */}
               <option value="DOCTOR">Doctor</option>
               <option value="NURSE">Nurse</option>
               <option value="PHARMACIST">Pharmacist</option>

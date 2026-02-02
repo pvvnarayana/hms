@@ -70,7 +70,11 @@ public class PharmacyService {
                         item.getMedicineName(), item.getQuantity(), item.getReorderLevel()));
             }
 
-            sendEmail("admin@hospital.com", "Pharmacy Low Stock Alert", message.toString());
+            String recipientEmail = System.getenv("NOTIFICATION_EMAIL");
+            if (recipientEmail == null || recipientEmail.isEmpty()) {
+                recipientEmail = "admin@hospital.com";
+            }
+            sendEmail(recipientEmail, "Pharmacy Low Stock Alert", message.toString());
         }
     }
 

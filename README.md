@@ -76,6 +76,34 @@ A comprehensive full-stack Hospital Management System built with Spring Boot bac
 - PostgreSQL 12 or higher
 - Maven 3.6 or higher
 
+## Security Configuration (IMPORTANT)
+
+Before running the application, you MUST configure the following environment variables:
+
+### Required Environment Variables
+
+1. **JWT Secret** (CRITICAL):
+   ```bash
+   # Generate a secure random secret
+   export JWT_SECRET=$(openssl rand -hex 32)
+   ```
+
+2. **Database Credentials**:
+   ```bash
+   export DB_USERNAME=your_postgres_username
+   export DB_PASSWORD=your_postgres_password
+   ```
+
+See [ENVIRONMENT_CONFIG.md](ENVIRONMENT_CONFIG.md) for complete configuration guide.
+
+### Security Notes
+
+- **NEVER** commit the `.env` file to version control
+- **ALWAYS** use environment variables for sensitive data
+- **NEVER** use default secrets in production
+- **ROTATE** secrets regularly (every 90 days recommended)
+- Reference `.env.example` files for required variables
+
 ## Database Setup
 
 1. Install PostgreSQL
@@ -117,7 +145,32 @@ The frontend will start on `http://localhost:3000`
 
 ## Default User Credentials
 
-After the first run, you can register users with different roles through the registration page.
+The application does NOT include default users for security reasons. You must register users through the application:
+
+1. Start the application
+2. Navigate to the registration page
+3. Register your first admin user
+4. **Note**: In production, restrict role assignment to prevent unauthorized admin creation
+
+For initial setup, you can register an admin user via API:
+
+```bash
+curl -X POST http://localhost:8080/api/auth/register \
+  -H "Content-Type: application/json" \
+  -d '{
+    "username": "admin",
+    "password": "SecurePassword123!",
+    "fullName": "System Administrator",
+    "email": "admin@hospital.com",
+    "phone": "1234567890",
+    "role": "ADMIN"
+  }'
+```
+
+**Security Warning**: In a production environment, you should:
+- Implement admin approval workflow for privileged roles
+- Restrict public registration to PATIENT role only
+- Or disable public registration entirely and create users via secure admin panel
 
 ## Email Configuration (Optional)
 

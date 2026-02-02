@@ -47,3 +47,6 @@ yarn-error.log*
 .env.development.local
 .env.test.local
 .env.production.local
+application-prod.yml
+application-*.yml
+!application.yml

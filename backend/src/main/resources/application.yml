@@ -4,8 +4,8 @@ spring:
   
   datasource:
     url: jdbc:postgresql://localhost:5432/hms_db
-    username: postgres
-    password: postgres
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgres}
     driver-class-name: org.postgresql.Driver
   
   jpa:
@@ -30,8 +30,12 @@ spring:
             enable: true
 
 jwt:
-  secret: ${JWT_SECRET:404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970}
+  secret: ${JWT_SECRET:}
   expiration: 86400000
+
+hms:
+  notification:
+    email: ${NOTIFICATION_EMAIL:admin@hospital.com}
 
 server:
   port: 8080
