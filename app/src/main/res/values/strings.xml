@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Online Exam</string>
+    
+    <!-- Common strings -->
+    <string name="login">Login</string>
+    <string name="logout">Logout</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="submit">Submit</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
+    <string name="back">Back</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="finish">Finish</string>
+    
+    <!-- Main Activity -->
+    <string name="welcome_message">Welcome to Online Exam</string>
+    <string name="student_portal">Student Portal</string>
+    <string name="admin_portal">Admin Portal</string>
+    
+    <!-- Student Module -->
+    <string name="student_login">Student Login</string>
+    <string name="student_id">Student ID</string>
+    <string name="student_dashboard">Student Dashboard</string>
+    <string name="available_exams">Available Exams</string>
+    <string name="my_results">My Results</string>
+    <string name="take_exam">Take Exam</string>
+    <string name="exam_title">Exam Title</string>
+    <string name="exam_duration">Duration</string>
+    <string name="exam_questions">Questions</string>
+    <string name="exam_start_time">Start Time</string>
+    <string name="exam_end_time">End Time</string>
+    <string name="exam_status">Status</string>
+    <string name="start_exam">Start Exam</string>
+    <string name="view_results">View Results</string>
+    <string name="score">Score</string>
+    <string name="total_marks">Total Marks</string>
+    <string name="obtained_marks">Obtained Marks</string>
+    <string name="percentage">Percentage</string>
+    <string name="time_remaining">Time Remaining</string>
+    <string name="question_number">Question %1$d of %2$d</string>
+    <string name="submit_exam">Submit Exam</string>
+    <string name="submit_confirmation">Are you sure you want to submit?</string>
+    
+    <!-- Admin Module -->
+    <string name="admin_login">Admin Login</string>
+    <string name="admin_dashboard">Admin Dashboard</string>
+    <string name="manage_exams">Manage Exams</string>
+    <string name="create_exam">Create Exam</string>
+    <string name="manage_questions">Manage Questions</string>
+    <string name="view_student_results">View Student Results</string>
+    <string name="add_question">Add Question</string>
+    <string name="question_text">Question Text</string>
+    <string name="option_a">Option A</string>
+    <string name="option_b">Option B</string>
+    <string name="option_c">Option C</string>
+    <string name="option_d">Option D</string>
+    <string name="correct_answer">Correct Answer</string>
+    <string name="marks">Marks</string>
+    <string name="exam_name">Exam Name</string>
+    <string name="exam_description">Description</string>
+    <string name="total_questions">Total Questions</string>
+    <string name="passing_marks">Passing Marks</string>
+    <string name="create">Create</string>
+    <string name="update">Update</string>
+    
+    <!-- Error Messages -->
+    <string name="error_empty_username">Please enter username</string>
+    <string name="error_empty_password">Please enter password</string>
+    <string name="error_invalid_credentials">Invalid credentials</string>
+    <string name="error_network">Network error. Please check your connection.</string>
+    <string name="error_generic">Something went wrong. Please try again.</string>
+    <string name="error_exam_not_available">Exam is not available</string>
+    <string name="error_time_expired">Time has expired</string>
+    
+    <!-- Success Messages -->
+    <string name="success_login">Login successful</string>
+    <string name="success_exam_submitted">Exam submitted successfully</string>
+    <string name="success_exam_created">Exam created successfully</string>
+    <string name="success_question_added">Question added successfully</string>
+    <string name="success_saved">Saved successfully</string>
+</resources>
