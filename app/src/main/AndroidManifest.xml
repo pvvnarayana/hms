@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Permissions -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.OnlineExam"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+        
+        <!-- Main Activity (Login/Splash) -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.OnlineExam">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Student Activities -->
+        <activity
+            android:name=".student.StudentLoginActivity"
+            android:exported="false"
+            android:theme="@style/Theme.OnlineExam" />
+        
+        <activity
+            android:name=".student.StudentDashboardActivity"
+            android:exported="false"
+            android:theme="@style/Theme.OnlineExam" />
+        
+        <activity
+            android:name=".student.ExamListActivity"
+            android:exported="false"
+            android:theme="@style/Theme.OnlineExam" />
+        
+        <activity
+            android:name=".student.TakeExamActivity"
+            android:exported="false"
+            android:theme="@style/Theme.OnlineExam" />
+        
+        <activity
+            android:name=".student.ViewResultsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.OnlineExam" />
+
+        <!-- Admin Activities -->
+        <activity
+            android:name=".admin.AdminLoginActivity"
+            android:exported="false"
+            android:theme="@style/Theme.OnlineExam" />
+        
+        <activity
+            android:name=".admin.AdminDashboardActivity"
+            android:exported="false"
+            android:theme="@style/Theme.OnlineExam" />
+        
+        <activity
+            android:name=".admin.ManageExamsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.OnlineExam" />
+        
+        <activity
+            android:name=".admin.CreateExamActivity"
+            android:exported="false"
+            android:theme="@style/Theme.OnlineExam" />
+        
+        <activity
+            android:name=".admin.ManageQuestionsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.OnlineExam" />
+        
+        <activity
+            android:name=".admin.ViewStudentResultsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.OnlineExam" />
+
+    </application>
+
+</manifest>
